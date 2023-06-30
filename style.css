@@ -1,0 +1,295 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 16px;
+    background-color: #3f3f3f;
+    font-family: 'Crimson Text', serif;
+}
+
+:root {
+    --light: #e2e2e2;
+}
+
+.position-relative {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #222;
+    width: 304px;
+    height: 354px;
+    padding: 3rem 1.5rem;
+    border-radius: 100px 25px;
+    box-shadow: 10px 10px 10px #000;
+}
+
+.position-relative::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+    transform-origin: bottom right;
+    position: absolute;
+    background: linear-gradient(#ff30b0, #53015e);
+    z-index: 1;
+    border-radius: 10px;
+    animation: rotate 6s linear infinite;
+}
+
+.position-relative::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: -50%;
+    top: -50%;
+    transform-origin: bottom right;
+    position: absolute;
+    background: linear-gradient(#023c6b, #2bc2fd);
+    z-index: 1;
+    border-radius: 10px;
+    animation: rotate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.form {
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    height: 350px;
+    padding: 3rem 1.5rem;
+    border-radius: 100px 25px;
+    position: absolute;
+    inset: 2px;
+    z-index: 10;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form .title-login {
+    text-align: center;
+    background: linear-gradient(#2bc2fd, #ff30b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.form .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 100%;
+    margin: 1rem auto 0;
+    color: var(--light);
+    background: transparent;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: inset 2px -2px 3px #000, inset -2px 2px 3px #000;
+    transition: .2s;
+    background: linear-gradient(#2bc2fd, #ff30b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn:hover {
+    box-shadow: inset 0px -2px 9px #000, inset 0px 2px 9px #000;
+}
+
+.btn:focus {
+    box-shadow: 0px 0px 2px #000, 6px 7px 3px #000;
+}
+
+.user_name, .password {
+    position: relative;
+    margin-bottom: .5rem;
+}
+
+.user_name > i, .password > i{
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,#2bc2fd, #ff30b0);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 100rem;
+    transition: .3s;
+}
+
+.user_name label, .password label {
+    position: absolute;
+    font-size: 14px;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: linear-gradient(#2bc2fd, #ff30b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: .3s;
+}
+
+.name-input, .password-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    color: var(--light);
+    padding-left: 10px;
+}
+
+.name-input:focus~label,
+.name-input:valid~label {
+    top: -7px;
+    left: 0;
+    font-size: 16px;
+}
+
+.password-input:focus~label,
+.password-input:valid~label {
+    top: -7px;
+    left: 0;
+    font-size: 16px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+    margin-top: 1rem;
+    position: relative;
+    color: var(--light);
+}
+
+.right {
+    color: var(--light);
+    text-align: right;
+    margin: 0;
+    width: fit-content;
+    margin: 0 0 0 auto;
+    cursor: pointer;
+    background: linear-gradient(#2bc2fd, #ff30b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.right::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0px;
+    width: 0;
+    height: 1px;
+    transition: .3s;
+    background: linear-gradient(#2bc2fd, #ff30b0);
+}
+.right:hover::before {
+    width: 100%;
+}
+.login-social {
+    color: var(--light);
+    text-align: center;
+    background-color: #222;
+    border-radius: 20px;
+}
+
+.login-accounts {
+    z-index: 2;
+    background: linear-gradient(#2bc2fd, #ff30b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 .5rem;
+}
+
+.bg-gradian {
+    background: #222;
+    padding: 0 .5rem;
+}
+.bg-gradian::before,.bg-gradian::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    background: linear-gradient(90deg,#2bc2fd, #ff30b0);
+    height: 1px;
+}
+.bg-gradian::before {
+    left: 0px;
+    top: 50%;
+    z-index: 1;
+}
+.bg-gradian::after {
+    right: 0px;
+    top: 50%;
+    z-index: 1;
+}
+.icon-social {
+    margin: 0 .5rem;
+    font-size: 1.5rem;
+    color: var(--light);
+    box-shadow: 0 0 5px #000;
+    border-radius: 100rem;
+    height: 40px;
+    width: 40px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-social::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+    transform-origin: bottom right;
+    position: absolute;
+    background: linear-gradient(#ff30b0, #53015e);
+    z-index: 1;
+    border-radius: 10px;
+    animation: rotate 1.5s linear infinite;
+}
+
+.icon-social::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: -50%;
+    top: -50%;
+    transform-origin: bottom right;
+    position: absolute;
+    background: linear-gradient(#023c6b, #2bc2fd);
+    z-index: 1;
+    border-radius: 10px;
+    animation: rotate 1.5s linear infinite;
+    animation-delay: -.75s;
+}
+
+.icon {
+    background-color: #222;
+    inset: 2px;
+    position: absolute;
+    z-index: 10;
+    border-radius: 100rem;
+    width: fit-content;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 7px;
+}
